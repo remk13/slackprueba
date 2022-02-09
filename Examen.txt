@@ -1,0 +1,139 @@
+//Mercado Carreon Ramon Eduardo IDGS10-2
+void main(){  
+List<Map<String, dynamic>> mapas= [
+    {
+      'nombre':'miguel',
+      'edad':19,
+      'carrera':'TI',
+      'sexo':'masculino',
+      'estado_civil':'casado',
+      'becado': true
+    },
+    {
+      'nombre':'sofia',
+      'edad':21,
+      'carrera':'TI',
+      'sexo':'fenemino',
+      'estado_civil':'casado',
+      'becado': true
+    }, 
+    {
+      'nombre':'juan',
+      'edad':22,
+      'carrera':'TI',
+      'sexo':'masculino',
+      'estado_civil':'soltero',
+      'becado': true
+    }, 
+    {
+      'nombre':'pedro',
+      'edad':18,
+      'carrera':'TI',
+      'sexo':'masculino',
+      'estado_civil':'soltero',
+      'becado': true
+    }, 
+    {
+      'nombre':'tiburcio',
+      'edad':23,
+      'carrera':'TI',
+      'sexo':'masculino',
+      'estado_civil':'casado',
+      'becado': true
+    }, 
+    {
+      'nombre':'cassandra',
+      'edad':24,
+      'carrera':'TI',
+      'sexo':'fenemino',
+      'estado_civil':'soltero',
+      'becado': true
+    }, 
+    {
+      'nombre':'miriam',
+      'edad':22,
+      'carrera':'TI',
+      'sexo':'fenemino',
+      'estado_civil':'casado',
+      'becado': true
+    }, 
+    {
+      'nombre':'alvaro',
+      'edad':21,
+      'carrera':'TI',
+      'sexo':'masculino',
+      'estado_civil':'soltero',
+      'becado': true
+    }, 
+    {
+      'nombre':'mario',
+      'edad':23,
+      'carrera':'TI',
+      'sexo':'masculino',
+      'estado_civil':'soltero',
+      'becado': true
+    }, 
+    {
+      'nombre':'eduardo',
+      'edad':22,
+      'carrera':'TI',
+      'sexo':'masculino',
+      'estado_civil':'soltero',
+      'becado': true
+    }
+  ];
+  
+  ciclar(mapas);
+  print(personas.length);
+  print(personas.runtimeType);
+  mostrarPersonas();
+  
+}
+
+
+class Persona{
+  Persona(this.nombre, this.edad, this.carrera, this.sexo, this.estado_civil, this.becado);
+  String nombre;
+  int edad;
+  String carrera;
+  String sexo;
+  String estado_civil;
+  bool becado;
+  
+}
+
+//Lista de instancias de la Clase Persona vacia
+List<Persona> personas = [];
+
+//funcion para agregar personas al arreglo de las clases de personas
+void agregarPersonas(elemento){
+  var persona = new Persona( elemento["nombre"], 
+                            elemento["edad"], 
+                            elemento["carrera"],
+                            elemento["sexo"], 
+                            elemento["estado_civil"],
+                            elemento["becado"]);
+  personas.add(persona);
+}
+
+//Se hace un ciclo de la lista de mapas de personas obtenido
+void ciclar(lista){
+    lista.forEach((elemento) =>
+                  //se agregan las personas
+                  agregarPersonas(elemento)
+    );
+}
+
+//Muestra a las personas dentro del arreglo de classes Persona
+void mostrarPersonas(){
+  personas.forEach((persona) =>
+                  print(persona.nombre +" "+ (persona.edad).toString()+" "+
+                        persona.carrera +" "+ persona.sexo +" "+ 
+                        persona.estado_civil +" "+ (persona.becado).toString())
+    );
+}
+
+
+
+
+
